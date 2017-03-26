@@ -45,8 +45,7 @@ public class TestMamiferos {
 				break;
 
 			case 6:
-				listarMamiferos();
-				System.out.println("\nMamíferos alimentados!");
+				alimentarMamiferos();
 				break;
 
 			default:
@@ -55,6 +54,18 @@ public class TestMamiferos {
 			}
 		} while (opcion != 7);
 
+	}
+
+	/**
+	 * Alimenta a todos los mamíferos del catálogo
+	 */
+	private static void alimentarMamiferos() {
+		try {
+			catalogo.alimentarMamiferos();
+			System.out.println("\nMamíferos alimentados!");
+		} catch (ListaVaciaException e) {
+			System.err.println(e.getMessage());
+		}
 	}
 
 	/**
@@ -111,8 +122,14 @@ public class TestMamiferos {
 	 */
 	private static void anadirMamifero() {
 		try {
-			catalogo.add(pedirMamifero());
-			System.out.println("\nMamífero añadido correctamente!");
+			Mamifero mamifero = pedirMamifero();
+			if (mamifero != null) {
+				catalogo.add(mamifero);
+				System.out.println("\nMamífero añadido correctamente!");
+			} else {
+				System.out.println("\nVolviendo al menú principal");
+			}
+
 		} catch (MamiferoYaExisteException e) {
 			System.err.println(e.getMessage());
 		}

@@ -1,7 +1,8 @@
 package catalogoMamiferos;
 
 /**
- * Clase abstracta que crea un mamífero
+ * Clase abstracta que crea un mamífero, ya sea un homo sapiens, un murciélago o
+ * una foca
  * 
  * @author Miguel Ángel Gavilán Merino
  *
@@ -43,7 +44,7 @@ public abstract class Mamifero {
 		this.etapa = etapa;
 	}
 
-	int getAmamantado() {
+	protected int getAmamantado() {
 		return amamantado;
 	}
 
@@ -56,7 +57,7 @@ public abstract class Mamifero {
 	 * 
 	 * @return cadena
 	 */
-	String amamantar() {
+	private String amamantar() {
 		madurar();
 		setAmamantado(getAmamantado() + 1);
 		return "Estoy amamantando";
@@ -87,14 +88,14 @@ public abstract class Mamifero {
 	 * 
 	 * @return
 	 */
-	abstract String comer();
+	protected abstract String comer();
 
 	/**
 	 * Se desplaza
 	 * 
 	 * @return
 	 */
-	abstract String desplazarse();
+	protected abstract String desplazarse();
 
 	@Override
 	public int hashCode() {

@@ -23,11 +23,12 @@ public class Murcielago extends Mamifero {
 	}
 
 	@Override
-	String comer() {
+	protected String comer() {
 		return "Comiendo insectos";
 	}
 
 	@Override
+	protected
 	String desplazarse() {
 		return "Volando";
 	}

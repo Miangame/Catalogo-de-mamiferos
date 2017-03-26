@@ -117,4 +117,18 @@ public class Mamiferos {
 	int size() {
 		return mamiferos.size();
 	}
+
+	/**
+	 * Alimenta a todos los mamíferos
+	 * 
+	 * @throws ListaVaciaException
+	 */
+	public void alimentarMamiferos() throws ListaVaciaException {
+		if (mamiferos.isEmpty())
+			throw new ListaVaciaException("La lista está vacía");
+
+		for (int i = 0; i < mamiferos.size(); i++) {
+			mamiferos.get(i).alimentar();
+		}
+	}
 }

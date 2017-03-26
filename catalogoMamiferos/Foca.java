@@ -18,11 +18,12 @@ public class Foca extends Mamifero {
 	}
 
 	@Override
-	String comer() {
+	protected String comer() {
 		return "Comiendo peces, crustaceos y cefalópodos";
 	}
 
 	@Override
+	protected
 	String desplazarse() {
 		return "reptando o nadando";
 	}

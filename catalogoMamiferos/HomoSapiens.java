@@ -21,11 +21,12 @@ public class HomoSapiens extends Mamifero {
 	}
 
 	@Override
-	String comer() {
+	protected String comer() {
 		return "Comiendo";
 	}
 
 	@Override
+	protected
 	String desplazarse() {
 		if (getEtapa() == Etapa.CRIA)
 			return "Gateando";
