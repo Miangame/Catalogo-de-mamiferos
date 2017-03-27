@@ -22,7 +22,7 @@ public class HomoSapiens extends Mamifero {
 
 	@Override
 	protected String comer() {
-		return "Comiendo";
+		return "Comiendo de todo";
 	}
 
 	@Override

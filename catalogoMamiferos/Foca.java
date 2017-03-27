@@ -1,5 +1,7 @@
 package catalogoMamiferos;
 
+import utiles.Utilidades;
+
 /**
  * Clase que crea una foca
  * 
@@ -19,13 +21,16 @@ public class Foca extends Mamifero {
 
 	@Override
 	protected String comer() {
-		return "Comiendo peces, crustaceos y cefalópodos";
+		String[] movimientos = { "peces", "crustaceos", "cefalópodos" };
+
+		return movimientos[Utilidades.generarEnteroAleatorio(0, 2)];
 	}
 
 	@Override
-	protected
-	String desplazarse() {
-		return "reptando o nadando";
+	protected String desplazarse() {
+		String[] movimientos = { "reptando", "nadando" };
+
+		return movimientos[Utilidades.generarEnteroAleatorio(0, 1)];
 	}
 
 	@Override

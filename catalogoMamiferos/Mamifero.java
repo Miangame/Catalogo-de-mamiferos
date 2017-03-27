@@ -21,7 +21,7 @@ public abstract class Mamifero {
 	/**
 	 * Número de veces que ha amamantado
 	 */
-	private int amamantado = 0;
+	private int amamantado = 1;
 
 	Mamifero(String nombre) {
 		setNombre(nombre);

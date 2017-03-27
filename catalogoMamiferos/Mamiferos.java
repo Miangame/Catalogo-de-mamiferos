@@ -81,10 +81,17 @@ public class Mamiferos {
 		if (mamiferos.isEmpty())
 			throw new ListaVaciaException("La lista está vacía");
 
+		/*
+		 * ListIterator<Mamifero> it = mamiferos.listIterator(); int i = 1;
+		 * while (it.hasPrevious()) { Mamifero m = it.previous();
+		 * System.out.println(m.toString()); if (m instanceof Foca)
+		 * cadena.append("\n" + i++ + ". " + m); }
+		 */
+
 		int i = 1;
 		for (int j = mamiferos.size() - 1; j >= 0; j--) {
 			if (mamiferos.get(j) instanceof Foca)
-				cadena.append("\n" + i + ". " + mamiferos.get(j));
+				cadena.append("\n" + i++ + ". " + mamiferos.get(j));
 		}
 
 		return cadena;
