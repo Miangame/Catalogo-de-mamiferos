@@ -1,5 +1,7 @@
 package catalogoMamiferos;
 
+import catalogoMamiferos.excepciones.ListaVaciaException;
+import catalogoMamiferos.excepciones.MamiferoYaExisteException;
 import utiles.*;
 
 /**

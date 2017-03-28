@@ -1,6 +1,9 @@
 package catalogoMamiferos;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
+
+import catalogoMamiferos.excepciones.*;
 
 /**
  * Envoltorio de un ArrayList de mamíferos
@@ -81,20 +84,23 @@ public class Mamiferos {
 		if (mamiferos.isEmpty())
 			throw new ListaVaciaException("La lista está vacía");
 
-		/*
-		 * ListIterator<Mamifero> it = mamiferos.listIterator(); int i = 1;
-		 * while (it.hasPrevious()) { Mamifero m = it.previous();
-		 * System.out.println(m.toString()); if (m instanceof Foca)
-		 * cadena.append("\n" + i++ + ". " + m); }
-		 */
-
+		ListIterator<Mamifero> it = mamiferos.listIterator(mamiferos.size());
 		int i = 1;
-		for (int j = mamiferos.size() - 1; j >= 0; j--) {
-			if (mamiferos.get(j) instanceof Foca)
-				cadena.append("\n" + i++ + ". " + mamiferos.get(j));
+		while (it.hasPrevious()) {
+			Mamifero m = it.previous();
+			if (m instanceof Foca)
+				cadena.append("\n" + i++ + ". " + m);
 		}
-
+		
 		return cadena;
+
+		/*
+		 * int i = 1; for (int j = mamiferos.size() - 1; j >= 0; j--) { if
+		 * (mamiferos.get(j) instanceof Foca) cadena.append("\n" + i++ + ". " +
+		 * mamiferos.get(j)); }
+		 * 
+		 * return cadena;
+		 */
 	}
 
 	/**
